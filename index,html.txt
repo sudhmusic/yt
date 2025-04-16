@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Thumbnail Maker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Impact&family=Roboto:wght@700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 YouTube Thumbnail Maker</h1>
+        
+        <div class="editor">
+            <!-- Thumbnail Preview Area -->
+            <div class="thumbnail" id="thumbnail">
+                <img id="bg-image" src="https://via.placeholder.com/1280x720" alt="Background">
+                <div class="text-overlay" id="text-overlay-1" style="top: 30%">YOUR TITLE</div>
+                <div class="text-overlay" id="text-overlay-2" style="top: 70%">Subtitle Here</div>
+            </div>
+            
+            <!-- Control Panel -->
+            <div class="controls">
+                <!-- Tabs Navigation -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="text">Text</button>
+                    <button class="tab-btn" data-tab="image">Image</button>
+                    <button class="tab-btn" data-tab="templates">Templates</button>
+                </div>
+
+                <!-- Text Tab -->
+                <div class="tab-content active" id="text-tab">
+                    <div class="form-group">
+                        <label for="text-selector">Select Text Box:</label>
+                        <select id="text-selector">
+                            <option value="1">Main Title</option>
+                            <option value="2">Subtitle</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Text Content:</label>
+                        <input type="text" id="title" placeholder="Enter your text">
+                    </div>
+                    <div class="form-group">
+                        <label for="font-family">Font Style:</label>
+                        <select id="font-family">
+                            <option value="Impact">Impact</option>
+                            <option value="Roboto">Roboto</option>
+                            <option value="Poppins">Poppins</option>
+                            <option value="Arial">Arial</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="text-color">Text Color:</label>
+                        <input type="color" id="text-color" value="#ffffff">
+                    </div>
+                    <div class="form-group">
+                        <label for="shadow-color">Shadow Color:</label>
+                        <input type="color" id="shadow-color" value="#000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="font-size">Font Size: <span id="font-size-value">40</span>px</label>
+                        <input type="range" id="font-size" min="10" max="100" value="40">
+                    </div>
+                </div>
+
+                <!-- Image Tab -->
+                <div class="tab-content" id="image-tab">
+                    <div class="form-group">
+                        <label for="bg-url">Image URL:</label>
+                        <input type="text" id="bg-url" placeholder="Paste image URL">
+                    </div>
+                    <div class="form-group">
+                        <label>Or Upload Image:</label>
+                        <input type="file" id="image-upload" accept="image/*">
+                    </div>
+                </div>
+
+                <!-- Templates Tab -->
+                <div class="tab-content" id="templates-tab">
+                    <div class="presets">
+                        <button class="preset-btn" data-bg="https://images.unsplash.com/photo-1635070041078-e363dbe005cb" data-text1="GAMING" data-text2="LIVE NOW">Gaming</button>
+                        <button class="preset-btn" data-bg="https://images.unsplash.com/photo-1496065187959-7f07b8353c55" data-text1="TUTORIAL" data-text2="STEP BY STEP">Tech</button>
+                        <button class="preset-btn" data-bg="https://images.unsplash.com/photo-1542831371-29b0f74f9713" data-text1="CODING" data-text2="LEARN FAST">Programming</button>
+                    </div>
+                </div>
+
+                <button id="download-btn">💾 Download Thumbnail</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HTML2Canvas for screenshot functionality -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
